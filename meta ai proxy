@@ -1,0 +1,42 @@
+# ======================================================
+# Muse for Meta — Surge / Shadowrocket Rule-Set
+# 作用：让 Muse for Meta 的全部流量走 PROXY
+# 更新日期：2026-10-18
+# 策略说明：
+#   宽泛覆盖 Meta AI / meta.ai / meta.com 相关域名，
+#   避免遗漏任意子域名导致功能失效。
+# ======================================================
+
+# ── Meta AI 核心域名 ──────────────────────────────────
+DOMAIN-SUFFIX,meta.ai,PROXY
+DOMAIN-SUFFIX,api.meta.ai,PROXY
+
+# ── Meta 主域及 AI 子服务 ──────────────────────────────
+DOMAIN-SUFFIX,meta.com,PROXY
+DOMAIN-SUFFIX,muse.meta.com,PROXY
+
+# ── Facebook 基础设施（Meta 旗下，Muse 登录 / 认证走此域）──
+DOMAIN-SUFFIX,facebook.com,PROXY
+DOMAIN-SUFFIX,fb.com,PROXY
+DOMAIN-SUFFIX,fbcdn.net,PROXY
+
+# ── Meta 静态资源 / CDN ────────────────────────────────
+DOMAIN-SUFFIX,metaaicdn.com,PROXY
+DOMAIN-SUFFIX,akamaihd.net,PROXY
+
+# ── Instagram（Meta 账户体系，Muse 可能用于登录）─────────
+DOMAIN-SUFFIX,instagram.com,PROXY
+DOMAIN-SUFFIX,cdninstagram.com,PROXY
+
+# ── WhatsApp（Meta 账户关联）─────────────────────────────
+DOMAIN-SUFFIX,whatsapp.com,PROXY
+DOMAIN-SUFFIX,whatsapp.net,PROXY
+
+# ── Llama / AI 模型 API ───────────────────────────────
+DOMAIN-SUFFIX,llamameta.net,PROXY
+DOMAIN-SUFFIX,llamaapi.com,PROXY
+
+# ── Meta 遥测 / 日志 / 分析（需要也走代理，否则连接失败）──
+DOMAIN-SUFFIX,graph.facebook.com,PROXY
+DOMAIN-SUFFIX,connect.facebook.net,PROXY
+
